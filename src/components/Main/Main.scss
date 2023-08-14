@@ -1,1 +1,67 @@
-@import "../../scss/mixins","../../scss/variables";
+@import "../../scss/mixins", "../../scss/variables";
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  row-gap: 2rem;
+  .card {
+    padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-radius: 6px;
+    width: 30%;
+    border: 1px solid black;
+    background-color: $cardNavBgColor;
+    position: relative;
+    overflow:hidden;
+        &:hover{
+        .img-container .img-filter{
+        display: block;
+    }
+    .card-info{
+      transform: translateY(0);
+    }
+
+        }
+    .title {
+      color: white;
+      padding: 2rem 0 1rem 1.5rem;
+      h2 {
+        font-size: xx-large;
+      }
+
+      text-align: left;
+    }
+    .img-container {
+      width: 100%;
+      padding: 0 0 0 1.5rem;
+      position: relative;
+      .img-filter {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.15);
+      }
+      .img-box {
+        border-radius: 8px;
+        img {
+          width: 100%;
+          height: 350px;
+          border-radius: 8px;
+          object-fit: cover;
+        }
+      }
+    }
+    .card-info {
+      padding: 1.5rem;
+        color: white;
+        position: absolute;
+        left: 0;
+        bottom:0;
+        transform: translateY(100%);
+transition: ease-in-out 0.5s;
+    }
+  }
+}
