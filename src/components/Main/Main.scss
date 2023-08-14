@@ -16,9 +16,9 @@
     position: relative;
     overflow:hidden;
         &:hover{
-        .img-container .img-filter{
-        display: block;
-    }
+        .img-container {
+          filter: grayscale(30);
+        }
     .card-info{
       transform: translateY(0);
     }
@@ -37,13 +37,8 @@
       width: 100%;
       padding: 0 0 0 1.5rem;
       position: relative;
-      .img-filter {
-        display: none;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: rgba($color: #000000, $alpha: 0.15);
-      }
+      filter: grayscale(0);
+
       .img-box {
         border-radius: 8px;
         img {
@@ -62,6 +57,17 @@
         bottom:0;
         transform: translateY(100%);
 transition: ease-in-out 0.5s;
+    }
+  }
+
+  @include media-xsm{
+    .card{
+      width: 46%;
+    }
+    @include media-lg{
+      .card{
+        width: 30%;
+      }
     }
   }
 }
